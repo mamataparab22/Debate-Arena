@@ -1,5 +1,3 @@
-
-
 from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 from integration.google_gemini_llm import query_gemini_llm
