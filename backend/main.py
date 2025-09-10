@@ -1,5 +1,7 @@
-from fastapi import FastAPI
+
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
+from integration.llm_connector import query_llm, query_llm_speech
 
 app = FastAPI()
 
@@ -14,3 +16,13 @@ app.add_middleware(
 @app.get("/")
 def read_root():
     return {"message": "Welcome to Debate Arena Backend!"}
+
+@app.get("/llm/text")
+def get_llm_text(prompt: str = "Hello, LLM!"):
+    response = query_llm(prompt)
+    return {"response": response}
+
+@app.get("/llm/speech")
+def get_llm_speech(prompt: str = "Hello, LLM with speech!"):
+    text, speech_bytes = query_llm_speech(prompt)
+    return Response(content=speech_bytes, media_type="audio/wav", headers={"X-LLM-Text": text})
