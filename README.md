@@ -1,27 +1,31 @@
-# Debate Arena Monorepo Structure
+# Debate Arena
 
-This repository contains three main Python projects:
+This repository is organized as follows:
 
-## Structure
+## Folder Structure
 
 ```
 Debate-Arena/
 │
-├── ui/           # Streamlit UI project
-│   └── README.md
-│
-├── backend/      # Backend server (Python, e.g., FastAPI/Flask)
-│   └── README.md
-│
-├── integration/  # Integration project (LLM connectors)
-│   └── README.md
-│
-└── README.md     # Monorepo overview
+├── README.md                # Project overview
+├── backend/                 # Backend logic and API
+│   ├── main.py              # Main backend application
+│   ├── README.md            # Backend documentation
+│   └── integration/
+│       ├── llm_connector.py # LLM integration logic
+│       └── README.md        # Integration documentation
+├── frontend/                # Frontend application
+│   ├── app.py               # Main frontend application
+│   └── README.md            # Frontend documentation
 ```
 
-## Getting Started
-- See each folder's README for details.
-- All projects use Python for implementation.
-- Designed for local development and easy integration.
+## Description
+- **backend/**: Contains the backend logic, including API endpoints and integration with language models.
+  - **main.py**: Entry point for backend services.
+  - **integration/**: Handles integration with external LLMs (Large Language Models).
+    - **llm_connector.py**: Code for connecting to LLMs.
+- **frontend/**: Contains the frontend application.
+  - **app.py**: Entry point for the frontend interface.
 
----
+## Getting Started
+Refer to the respective `README.md` files in each folder for setup and usage instructions.
