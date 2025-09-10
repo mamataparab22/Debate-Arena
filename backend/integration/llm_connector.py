@@ -1,8 +1,12 @@
 
+
 import requests
 from typing import Tuple
 
 def query_llm(prompt: str) -> str:
+    """
+    Simulate an LLM response. Replace with actual LLM API call.
+    """
     # Example: Replace with actual LLM API call
     # response = requests.post('https://api.llm.com/generate', json={'prompt': prompt})
     # return response.json()['result']
@@ -10,7 +14,7 @@ def query_llm(prompt: str) -> str:
 
 def query_llm_speech(prompt: str) -> Tuple[str, bytes]:
     """
-    Returns a tuple of (text_response, speech_audio_bytes)
+    Returns a tuple of (text_response, speech_audio_bytes).
     Replace with actual TTS (text-to-speech) integration.
     """
     text = query_llm(prompt)

@@ -1,6 +1,8 @@
 
+
 from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
+from integration.google_gemini_llm import query_gemini_llm
 from integration.llm_connector import query_llm, query_llm_speech
 
 app = FastAPI()
@@ -25,4 +27,14 @@ def get_llm_text(prompt: str = "Hello, LLM fro!"):
 @app.get("/llm/speech")
 def get_llm_speech(prompt: str = "Hello, LLM with speech!"):
     text, speech_bytes = query_llm_speech(prompt)
-    return Response(content=speech_bytes, media_type="audio/wav", headers={"X-LLM-Text": text})
+    return Response(
+        content=speech_bytes,
+        media_type="audio/wav",
+        headers={"X-LLM-Text": text},
+    )
+
+# Gemini LLM endpoint
+@app.get("/llm/gemini")
+def get_gemini_text(prompt: str = "Hello from Gemini!"):
+    response = query_gemini_llm(prompt)
+    return {"response": response}
