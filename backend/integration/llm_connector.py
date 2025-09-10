@@ -6,7 +6,7 @@ def query_llm(prompt: str) -> str:
     # Example: Replace with actual LLM API call
     # response = requests.post('https://api.llm.com/generate', json={'prompt': prompt})
     # return response.json()['result']
-    return f"LLM response to: {prompt}"
+    return f"LLM response to: {prompt}: This is a simulated response from server."
 
 def query_llm_speech(prompt: str) -> Tuple[str, bytes]:
     """

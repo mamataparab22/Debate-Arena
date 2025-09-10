@@ -18,7 +18,7 @@ def read_root():
     return {"message": "Welcome to Debate Arena Backend!"}
 
 @app.get("/llm/text")
-def get_llm_text(prompt: str = "Hello, LLM!"):
+def get_llm_text(prompt: str = "Hello, LLM fro!"):
     response = query_llm(prompt)
     return {"response": response}
 

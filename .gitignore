@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env
+venv/
+ENV/
+*.sqlite3
+
+# Python dev tools
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.pylint.d/
+.tox/
+.envrc
+.idea/
+*.spec
+
+# Python binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+
+# Streamlit
+.streamlit/
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Misc
+*.bak
+*.tmp
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+
+# Python virtual environments
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Others
+*.swp
+*.swo
